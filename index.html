@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BURDEN PH — Hardcore from Cebu City</title>
+<meta name="description" content="BURDEN PH. 032 hardcore from Cebu City, Philippines. Est. 2018.">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
+
+<!-- Fonts: Overpass (highway-signage letterforms, matches the logo) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --black:  #0c0c0e;
+    --dark:   #161616;
+    --panel:  #1d1d1d;
+    --white:  #eceaf0;
+    --violet:    #9b7bbf;
+    --violet-dk: #6f558f;
+    --violet-br: #c4a8e8;
+    --grey:   #a9a4b0;
+    --muted:  #6f6a78;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: "Archivo Black", "Arial Black", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { width: min(1100px, 92%); margin: 0 auto; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(13,13,13,0.96);
+    border-bottom: 1px solid #2e2e2e;
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; padding: 12px 20px; width: 100%; max-width: none;
+  }
+  .logo {
+    display: flex; align-items: center;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 20px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--white);
+  }
+  .logo img { height: 40px; width: auto; object-fit: contain; border: none; }
+  .nav-links { display: flex; gap: 22px; }
+  .nav-links a {
+    text-transform: uppercase;
+    font-size: 15px; letter-spacing: 0.1em; color: var(--grey);
+  }
+  .nav-links a:hover { color: var(--violet-br); }
+  .nav-socials { display: flex; gap: 8px; align-items: center; }
+  .nav-socials a {
+    width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+    color: var(--grey);
+  }
+  .nav-socials a:hover { color: var(--violet-br); }
+  .nav-socials svg { width: 20px; height: 20px; }
+
+  /* ---------- Header (full-screen image) ---------- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #0c0c0e;
+    border-bottom: 2px solid var(--violet);
+  }
+  .hero-fit {
+    position: absolute; inset: 0;
+    background: url("assets/header.jpg") center / cover no-repeat;
+  }
+
+  /* ---------- Intro text (below header image) ---------- */
+  .intro { padding: 90px 0; text-align: center; }
+  .intro .wordmark {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(56px, 13vw, 160px);
+    line-height: 0.95;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .intro .wordmark .ph { color: var(--violet); }
+  .intro .tagline {
+    font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.26em;
+    color: var(--violet-br); font-size: clamp(12px, 2.4vw, 17px);
+    margin-top: 20px;
+  }
+  .intro .city { color: var(--grey); letter-spacing: 0.16em; font-size: 13px; margin-top: 10px; }
+
+  .cta-row { margin-top: 38px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.14em; font-size: 13px;
+    padding: 14px 30px; border: 2px solid var(--white);
+    display: inline-block;
+  }
+  .btn.solid { background: var(--violet); border-color: var(--violet); color: var(--black); }
+  .btn.solid:hover { background: var(--violet-br); border-color: var(--violet-br); }
+  .btn.ghost:hover { background: var(--white); color: var(--black); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 80px 0; border-bottom: 1px solid #232323; }
+
+  .sec-head { text-align: center; margin-bottom: 48px; }
+  .sec-title {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(32px, 6vw, 56px);
+    text-transform: uppercase; letter-spacing: 0.03em; color: var(--white);
+  }
+  .sec-title .accent { color: var(--violet); }
+  .sec-sub { color: var(--muted); text-transform: uppercase; letter-spacing: 0.22em; font-size: 12px; margin-top: 10px; }
+
+  /* Social row */
+  .socials { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .chip {
+    width: 58px; height: 58px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #2e2e2e; color: var(--grey);
+  }
+  .chip svg { width: 26px; height: 26px; }
+  .chip:hover { border-color: var(--violet); color: var(--violet-br); }
+
+  /* Releases */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--panel); border: 1px solid #2a2a2a; padding: 26px 22px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .card:hover { border-color: var(--violet); }
+  .card .cover { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center; display: block; margin: 0 auto; border-bottom: 1px solid #2a2a2a; }
+  .card .year { color: var(--violet-br); font-weight: 800; letter-spacing: 0.2em; font-size: 12px; }
+  .card .title { font-weight: 900; font-size: 25px; text-transform: uppercase; line-height: 1.1; }
+  .card .feat { color: var(--grey); font-size: 14px; }
+  .card .links { margin-top: auto; display: flex; gap: 14px; }
+  .card .links a { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .card .links a:hover { color: var(--violet-br); }
+
+  /* Video */
+  .video-box {
+    position: relative; aspect-ratio: 16/9; background: var(--dark);
+    border: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: center;
+  }
+  .video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-box .empty { text-align: center; color: var(--muted); padding: 20px; font-size: 15px; }
+  .video-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  .vid { display: block; text-decoration: none; }
+  .vid .thumb { display: block; aspect-ratio: 16/9; overflow: hidden; border: 1px solid #2a2a2a; background: var(--dark); }
+  .vid .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }
+  .vid:hover .thumb img { transform: scale(1.05); }
+  .vid:hover .thumb { border-color: var(--violet); }
+  .vid .title { display: block; margin-top: 10px; color: var(--grey); font-size: 14px; line-height: 1.35; }
+  .vid:hover .title { color: var(--violet-br); }
+
+  /* Shows */
+  .shows { display: flex; flex-direction: column; }
+  .show { display: grid; grid-template-columns: 120px 1fr auto; align-items: center; gap: 24px; text-align: left; padding: 20px 0; }
+  .show .date { color: var(--violet-br); font-weight: 800; letter-spacing: 0.15em; font-size: 15px; }
+  .show .name { color: var(--white); font-size: 21px; text-transform: uppercase; line-height: 1.2; }
+  .show .loc { display: inline-block; justify-self: center; padding: 9px 24px; border: 1px solid var(--violet); color: var(--white); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .show a.loc { text-decoration: none; }
+  .show a.loc:hover { background: var(--violet); color: var(--black); }
+
+  /* Merch */
+  .merch { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 720px; margin: 0 auto; }
+  .merch-img { margin: 0; border: 1px solid #2a2a2a; background: var(--dark); }
+  .merch-img img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+  .merch-info { text-align: center; margin-top: 26px; display: flex; flex-direction: column; gap: 8px; }
+  .merch-name { color: var(--white); font-size: 20px; text-transform: uppercase; }
+  .merch-price { color: var(--violet-br); font-size: 22px; }
+  .merch-cta { text-align: center; margin-top: 26px; }
+
+  /* About teaser */
+  .bio { max-width: 720px; margin: 0 auto; text-align: center; font-size: 19px; color: var(--grey); }
+  .bio b { color: var(--violet-br); font-weight: 800; }
+
+  .contact-list { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .contact-list a {
+    display: block; text-align: center; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 16px;
+    border: 1px solid #2e2e2e;
+  }
+  .contact-list a:hover { border-color: var(--violet); color: var(--violet-br); }
+
+  /* Footer */
+  footer { padding: 40px 0 60px; text-align: center; }
+  footer .foot-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+  footer .foot-links a { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; }
+  footer .foot-links a:hover { color: var(--violet-br); }
+  footer .copy { color: #5a554d; font-size: 13px; letter-spacing: 0.08em; }
+  footer .copy b { color: var(--violet-br); font-weight: 700; }
+
+  @media (max-width: 640px) {
+    .nav { flex-wrap: wrap; justify-content: center; gap: 10px; padding: 10px 14px; }
+    .logo { order: -1; width: 100%; justify-content: center; }
+    .logo img { height: 30px; width: auto; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px 16px; }
+    .nav-links a { font-size: 12px; }
+    .nav-socials a { width: 30px; height: 30px; }
+    .nav-socials svg { width: 18px; height: 18px; }
+
+    section { padding: 56px 0; }
+    .intro { padding: 56px 0; }
+    .intro .wordmark { font-size: clamp(44px, 15vw, 72px); }
+    .hero { min-height: 100svh; }
+    .hero-fit { background: url("assets/header-mobile.jpg") center / cover no-repeat; }
+
+    .grid { grid-template-columns: 1fr; gap: 16px; }
+    .card .cover { margin: 0 auto; }
+    .merch { gap: 12px; }
+    .bio { font-size: 17px; }
+
+    .shows { padding: 0; }
+    .show { grid-template-columns: 1fr; gap: 8px; padding: 16px 0; }
+    .show .loc { justify-self: center; }
+    .show .name { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <nav class="nav-links nav-left">
+      <a href="#top">Home</a>
+      <a href="#music">Music</a>
+      <a href="#video">Videos</a>
+      <a href="#shows">Show</a>
+      <a href="#about">About</a>
+      <a href="#merch">Merch</a>
+    </nav>
+    <a class="logo" href="#top"><img src="assets/logo.png" alt="BURDEN PH"></a>
+    <div class="nav-socials" id="navSocials"></div>
+  </div>
+</header>
+
+<!-- HEADER: full-screen image -->
+<div class="hero" id="top">
+  <div class="hero-fit"></div>
+</div>
+
+<!-- INTRO TEXT (below header) -->
+<section class="intro">
+  <div class="wrap">
+    <div class="wordmark">BURDEN<span class="ph">PH</span></div>
+    <div class="tagline" id="tagline">Cebu Hardcore | Tiles Breaker Crew</div>
+    <div class="city" id="city">Cebu City, Philippines — Est. 2018</div>
+    <div class="cta-row">
+      <a class="btn solid" href="https://open.spotify.com/artist/0r69p8100feXvwZyKvrk4G" target="_blank">Stream Now</a>
+      <a class="btn ghost" href="https://burdenph032.bandcamp.com" target="_blank">Bandcamp</a>
+    </div>
+  </div>
+</section>
+
+<!-- MERCH -->
+<section id="merch">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title">Merch</h2>
+      <p class="sec-sub">Burden PH tee — front &amp; back</p>
+    </div>
+    <div class="merch">
+      <figure class="merch-img"><img src="assets/merch-front.jpg" alt="Burden PH tee front" loading="lazy"></figure>
+      <figure class="merch-img"><img src="assets/merch-back.jpg" alt="Burden PH tee back" loading="lazy"></figure>
+    </div>
+    <div class="merch-info">
+      <span class="merch-name">Burden PH T-Shirt</span>
+      <span class="merch-price">₱600 · $9.57</span>
+    </div>
+    <div class="merch-cta">
+      <!-- Paste your Google Form URL here -->
+      <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLScOKVtDfVXFyvGhnIN_B9VcE793Flo7CVEqW5Ml3gOiVOvFyg/viewform" target="_blank" rel="noopener">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIALS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title">Follow <span class="accent">Us</span></h2>
+      <p class="sec-sub">All our links, one place</p>
+    </div>
+    <div class="socials" id="socials"></div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title">Tracks</h2>
+      <p class="sec-sub">Stream everywhere</p>
+    </div>
+    <div class="grid" id="releases"></div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title">Videos</h2>
+    </div>
+    <div class="video-grid" id="videos"></div>
+  </div>
+</section>
+
+<!-- SHOWS -->
+<section id="shows">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title">SHOWS</h2>
+    </div>
+    <div class="shows" id="showsList"></div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title">Who We <span class="accent">Are</span></h2>
+    </div>
+    <p class="bio">
+      <b>BURDEN PH</b> is a hardcore band from the Queen City of the South —
+      Cebu City, Philippines. Formed in <b>2018</b>, we carry the <b>032</b> flag
+      and play fast, heavy, honest hardcore.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="https://instagram.com/burdenhardcore" target="_blank">Instagram</a>
+      <a href="https://facebook.com/burdenhardcore" target="_blank">Facebook</a>
+      <a href="https://youtube.com/@burdencebuhardcore8491" target="_blank">YouTube</a>
+      <a href="https://open.spotify.com/artist/0r69p8100feXvwZyKvrk4G" target="_blank">Spotify</a>
+      <a href="https://music.apple.com/artist/1677537996" target="_blank">Apple Music</a>
+      <a href="https://burdenph032.bandcamp.com" target="_blank">Bandcamp</a>
+      <a href="https://linktr.ee/burdenph" target="_blank">Linktree</a>
+    </div>
+    <p class="copy">© 2026 <b>BURDEN PH</b> · 032 Hardcore · Cebu City, Philippines</p>
+  </div>
+</footer>
+
+<script src="links.js?v=2"></script>
+<script>
+  const B = window.BURDEN;
+
+  document.getElementById("tagline").textContent = B.tagline;
+  document.getElementById("city").textContent = B.city + " — Est. " + B.established;
+
+  // Brand icon paths (Simple Icons, 24x24)
+  const ICONS = {
+    "Instagram": "M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077",
+    "Facebook": "M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z",
+    "YouTube": "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
+    "Spotify": "M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z",
+    "Apple Music": "M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.747.043-1.49.123-2.193.4-1.336.53-2.3 1.452-2.865 2.78-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.801.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03a12.5 12.5 0 001.57-.1c.822-.106 1.596-.35 2.295-.81a5.046 5.046 0 001.88-2.207c.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536a1.88 1.88 0 011.038-2.022c.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516a.904.904 0 00.02-.193c0-1.815 0-3.63-.002-5.443a.725.725 0 00-.026-.185c-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.325.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.442-.088.663-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z",
+    "Bandcamp": "M0 18.75l7.437-13.5H24l-7.438 13.5H0z",
+    "Linktree": "m13.73635 5.85251 4.00467-4.11665 2.3248 2.3808-4.20064 4.00466h5.9085v3.30473h-5.9365l4.22865 4.10766-2.3248 2.3338L12.0005 12.099l-5.74052 5.76852-2.3248-2.3248 4.22864-4.10766h-5.9375V8.12132h5.9085L3.93417 4.11666l2.3248-2.3808 4.00468 4.11665V0h3.4727zm-3.4727 10.30614h3.4727V24h-3.4727z"
+  };
+
+  const iconSvg = s =>
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="' + (ICONS[s.name] || "") + '"/></svg>';
+
+  document.getElementById("socials").innerHTML = B.socials.map(s =>
+    '<a class="chip" href="' + s.url + '" target="_blank" rel="noopener" title="' + s.name + '" aria-label="' + s.name + '">' + iconSvg(s) + "</a>"
+  ).join("");
+
+  document.getElementById("navSocials").innerHTML = B.socials.map(s =>
+    '<a href="' + s.url + '" target="_blank" rel="noopener" title="' + s.name + '" aria-label="' + s.name + '">' + iconSvg(s) + "</a>"
+  ).join("");
+
+  document.getElementById("releases").innerHTML = B.releases.map(r =>
+    '<div class="card">' +
+      (r.cover ? '<img class="cover" src="' + r.cover + '" alt="' + r.title + ' cover" loading="lazy">' : "") +
+      '<span class="year">' + r.year + "</span>" +
+      '<h3 class="title">' + r.title + "</h3>" +
+      (r.feat ? '<p class="feat">' + r.feat + "</p>" : "") +
+      '<div class="links">' +
+        '<a href="' + r.spotify + '" target="_blank" rel="noopener">Spotify</a>' +
+        '<a href="' + r.bandcamp + '" target="_blank" rel="noopener">Bandcamp</a>' +
+      "</div>" +
+    "</div>"
+  ).join("");
+
+  document.getElementById("videos").innerHTML = (B.videos || []).map(v =>
+    '<a class="vid" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">' +
+      '<span class="thumb"><img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="' + v.title + '" loading="lazy"></span>' +
+      '<span class="title">' + v.title + "</span>" +
+    "</a>"
+  ).join("");
+
+  document.getElementById("showsList").innerHTML = (B.shows || []).map(s =>
+    '<div class="show">' +
+      '<span class="date">' + s.date + "</span>" +
+      '<span class="name">' + s.name + "</span>" +
+      (s.maps
+        ? '<a class="loc" href="' + s.maps + '" target="_blank" rel="noopener">' + s.loc + "</a>"
+        : '<span class="loc">' + s.loc + "</span>") +
+    "</div>"
+  ).join("");
+</script>
+</body>
+</html>
